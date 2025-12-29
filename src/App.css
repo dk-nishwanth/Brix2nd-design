@@ -1,4 +1,4 @@
-/* BRIX Logo sized larger to match nav bar */
+/* BRIX Logo - properly sized to fit with nav bar */
 .website-logo-corner {
   position: fixed;
   top: clamp(12px, 2vh, 20px);
@@ -8,11 +8,37 @@
 }
 
 .website-logo-img {
-  height: clamp(48px, 8vw, 64px); /* Increased size to match nav bar better */
+  height: clamp(56px, 10vw, 72px);
   width: auto;
   display: block;
   object-fit: contain;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Mobile logo - adjusted for full-width nav */
+@media (max-width: 768px) {
+  .website-logo-corner {
+    top: 10px !important;
+    left: 10px !important;
+    z-index: 999 !important; /* Same level as header */
+    pointer-events: none !important; /* Allow clicks through to nav */
+  }
+  
+  .website-logo-img {
+    height: 48px !important; /* Match nav bar height */
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15)) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .website-logo-corner {
+    top: 8px !important;
+    left: 8px !important;
+  }
+  
+  .website-logo-img {
+    height: 46px !important; /* Match nav bar height */
+  }
 }
 
 .app {
@@ -51,25 +77,29 @@ main > section:first-child {
   margin-bottom: clamp(80px, 15vh, 120px); /* Extra space after hero */
 }
 
-/* Responsive section spacing */
+/* Responsive section spacing - tighter for mobile */
 @media (max-width: 768px) {
   main > section,
   main > div[class*="section"] {
-    margin-bottom: clamp(50px, 10vh, 80px);
+    margin-bottom: clamp(20px, 4vh, 30px) !important; /* Reduced spacing */
+    padding-left: clamp(16px, 4vw, 24px) !important;
+    padding-right: clamp(16px, 4vw, 24px) !important;
   }
   
   main > section:first-child {
-    margin-bottom: clamp(60px, 12vh, 90px);
+    margin-bottom: clamp(18px, 3.5vh, 28px) !important; /* Tighter after hero */
   }
 }
 
 @media (max-width: 480px) {
   main > section,
   main > div[class*="section"] {
-    margin-bottom: clamp(40px, 8vh, 60px);
+    margin-bottom: clamp(16px, 3vh, 24px) !important; /* Compact spacing */
+    padding-left: clamp(14px, 3.5vw, 20px) !important;
+    padding-right: clamp(14px, 3.5vw, 20px) !important;
   }
   
   main > section:first-child {
-    margin-bottom: clamp(50px, 10vh, 70px);
+    margin-bottom: clamp(14px, 2.5vh, 22px) !important; /* Minimal after hero */
   }
 }

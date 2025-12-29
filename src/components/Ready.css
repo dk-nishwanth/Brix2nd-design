@@ -159,9 +159,10 @@
 
 .cta-description {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff !important;
   line-height: 1.6;
   margin: 0 0 40px 0;
+  opacity: 1 !important;
 }
 
 .cta-buttons {
@@ -266,8 +267,37 @@
     padding: 40px;
   }
   
+  .cta-header {
+    margin-bottom: 30px;
+  }
+  
+  .cta-count {
+    font-size: 0.85rem;
+    color: #ffffff !important;
+    opacity: 0.95 !important;
+  }
+  
   .cta-title {
     font-size: 3rem;
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cta-description {
+    font-size: 1rem;
+    color: #ffffff !important;
+    opacity: 0.95 !important;
+    line-height: 1.6;
+  }
+  
+  .btn-primary {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+  }
+  
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
   }
 }
 
@@ -297,21 +327,62 @@
   }
   
   .ready-right {
-    padding: 30px;
+    padding: 32px 24px;
     border-radius: 24px;
+    min-height: 380px;
+  }
+  
+  .cta-header {
+    margin-bottom: 24px;
+  }
+  
+  .avatar {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .cta-count {
+    font-size: 0.8rem;
+    color: #ffffff !important;
+    font-weight: 600 !important;
   }
   
   .cta-title {
     font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+  }
+  
+  .cta-description {
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+    color: #ffffff !important;
+    opacity: 0.95 !important;
   }
   
   .cta-buttons {
     flex-direction: column;
+    gap: 12px;
   }
   
   .btn-primary,
   .btn-secondary {
     width: 100%;
     justify-content: center;
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+  
+  .btn-primary {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+  }
+  
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
   }
 }

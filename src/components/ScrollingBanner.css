@@ -6,7 +6,7 @@
   overflow: hidden;
   white-space: nowrap;
   position: fixed;
-  top: clamp(100px, 16vh, 130px); /* Increased top position for more spacing */
+  top: clamp(100px, 16vh, 130px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
@@ -15,6 +15,56 @@
   align-items: center;
   border-radius: clamp(18px, 3vw, 25px);
   box-shadow: 0 4px 20px rgba(163, 230, 53, 0.3);
+}
+
+/* Mobile banner - redesigned as compact pill */
+@media (max-width: 768px) {
+  .scrolling-banner {
+    top: 68px !important; /* Below nav bar (10px + 48px + 10px) */
+    height: 32px !important; /* Compact height */
+    max-width: calc(100% - 40px) !important; /* Narrower for modern look */
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 2px 12px rgba(163, 230, 53, 0.3) !important;
+  }
+  
+  .banner-text {
+    font-size: 9.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+  }
+  
+  .banner-star {
+    font-size: 11px !important;
+  }
+  
+  .banner-item {
+    padding: 0 14px !important;
+    gap: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrolling-banner {
+    top: 64px !important; /* Below nav bar (8px + 46px + 10px) */
+    height: 30px !important;
+    max-width: calc(100% - 32px) !important;
+  }
+  
+  .banner-text {
+    font-size: 9px !important;
+  }
+  
+  .banner-star {
+    font-size: 10px !important;
+  }
+  
+  .banner-item {
+    padding: 0 12px !important;
+    gap: 7px !important;
+  }
 }
 
 .banner-track {
@@ -64,72 +114,95 @@
   animation-play-state: paused;
 }
 
-/* Responsive banner positioning with enhanced spacing */
+/* Mobile-optimized banner positioning */
 @media (max-width: 768px) {
   .scrolling-banner {
-    height: clamp(36px, 6vw, 46px);
-    max-width: calc(100% - 20px);
-    top: clamp(85px, 14vh, 110px); /* Adjusted for mobile spacing */
-    left: 10px;
-    right: 10px;
+    height: clamp(32px, 5vw, 40px); /* Reduced height for mobile */
+    max-width: calc(100% - 16px);
+    top: clamp(70px, 8vh, 90px); /* Reduced top position for mobile */
+    left: 8px;
+    right: 8px;
     transform: none;
-    border-radius: 18px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(163, 230, 53, 0.25); /* Reduced shadow */
   }
   
   .banner-text {
-    font-size: clamp(12px, 2.2vw, 15px);
+    font-size: clamp(10px, 2vw, 13px); /* Smaller mobile text */
   }
   
   .banner-star {
-    font-size: clamp(14px, 2.8vw, 17px);
+    font-size: clamp(12px, 2.5vw, 15px);
   }
   
   .banner-item {
-    padding: 0 clamp(24px, 5vw, 40px);
-    gap: clamp(16px, 3vw, 24px);
+    padding: 0 clamp(16px, 4vw, 24px); /* Reduced padding */
+    gap: clamp(10px, 2.5vw, 16px);
   }
 }
 
 @media (max-width: 600px) {
   .scrolling-banner {
-    height: clamp(34px, 5.5vw, 42px);
-    top: clamp(80px, 12vh, 100px);
-    left: 8px;
-    right: 8px;
-    border-radius: 16px;
-  }
-  
-  .banner-text {
-    font-size: clamp(11px, 2vw, 14px);
-  }
-  
-  .banner-star {
-    font-size: clamp(13px, 2.5vw, 16px);
-  }
-  
-  .banner-item {
-    padding: 0 clamp(20px, 4vw, 32px);
-    gap: clamp(14px, 2.5vw, 20px);
-  }
-}
-
-@media (max-width: 500px) {
-  .scrolling-banner {
-    height: clamp(32px, 5vw, 38px);
-    top: clamp(75px, 10vh, 95px);
+    height: clamp(30px, 4.5vw, 36px);
+    top: clamp(65px, 7vh, 85px);
+    left: 6px;
+    right: 6px;
     border-radius: 14px;
   }
   
   .banner-text {
-    font-size: clamp(10px, 1.8vw, 13px);
+    font-size: clamp(9px, 1.8vw, 12px);
   }
   
   .banner-star {
-    font-size: clamp(12px, 2.2vw, 15px);
+    font-size: clamp(11px, 2.2vw, 14px);
   }
   
   .banner-item {
-    padding: 0 clamp(18px, 3.5vw, 28px);
-    gap: clamp(12px, 2vw, 18px);
+    padding: 0 clamp(14px, 3.5vw, 20px);
+    gap: clamp(8px, 2vw, 14px);
+  }
+}
+
+@media (max-width: 480px) {
+  .scrolling-banner {
+    height: clamp(28px, 4vw, 34px);
+    top: clamp(60px, 6vh, 80px);
+    border-radius: 12px;
+  }
+  
+  .banner-text {
+    font-size: clamp(8px, 1.6vw, 11px);
+    letter-spacing: 0.05em;
+  }
+  
+  .banner-star {
+    font-size: clamp(10px, 2vw, 13px);
+  }
+  
+  .banner-item {
+    padding: 0 clamp(12px, 3vw, 18px);
+    gap: clamp(6px, 1.5vw, 12px);
+  }
+}
+
+@media (max-width: 360px) {
+  .scrolling-banner {
+    height: clamp(26px, 3.5vw, 32px);
+    top: clamp(55px, 5vh, 75px);
+    border-radius: 10px;
+  }
+  
+  .banner-text {
+    font-size: clamp(7px, 1.4vw, 10px);
+  }
+  
+  .banner-star {
+    font-size: clamp(9px, 1.8vw, 12px);
+  }
+  
+  .banner-item {
+    padding: 0 clamp(10px, 2.5vw, 16px);
+    gap: clamp(5px, 1.2vw, 10px);
   }
 }

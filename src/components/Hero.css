@@ -1,4 +1,4 @@
-/* Hero section with maximum possible spacing from banner */
+/* Mobile-first hero section with minimal spacing */
 .hero {
   width: 100%;
   height: 100vh;
@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: clamp(280px, 35vh, 350px) clamp(20px, 5vw, 60px) clamp(40px, 6vh, 60px); /* Dramatically increased top padding */
+  padding: clamp(280px, 35vh, 350px) clamp(20px, 5vw, 60px) clamp(40px, 6vh, 60px);
   position: relative;
   overflow: hidden;
   margin-bottom: 0;
@@ -15,7 +15,43 @@
   gap: clamp(50px, 8vh, 80px);
 }
 
-/* Text Content with additional bottom spacing */
+/* Mobile-specific overrides with minimal spacing */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: clamp(80px, 10vh, 100px) clamp(16px, 4vw, 24px) clamp(20px, 3vh, 30px); /* Much reduced mobile padding */
+    gap: clamp(15px, 2vh, 25px); /* Minimal gap */
+    justify-content: flex-start;
+    padding-top: clamp(90px, 12vh, 110px); /* Minimal top spacing */
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: clamp(70px, 8vh, 90px) clamp(12px, 3vw, 20px) clamp(15px, 2vh, 25px);
+    gap: clamp(12px, 1.5vh, 20px);
+    padding-top: clamp(80px, 10vh, 100px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: clamp(60px, 6vh, 80px) clamp(10px, 2.5vw, 16px) clamp(12px, 1.5vh, 20px);
+    gap: clamp(10px, 1vh, 18px);
+    padding-top: clamp(70px, 8vh, 90px); /* Minimal mobile top spacing */
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding: clamp(50px, 5vh, 70px) clamp(8px, 2vw, 12px) clamp(10px, 1vh, 15px);
+    gap: clamp(8px, 0.8vh, 15px);
+    padding-top: clamp(60px, 6vh, 80px);
+  }
+}
+
+/* Text Content optimized for mobile */
 .hero-content {
   text-align: center;
   max-width: 1000px;
@@ -27,7 +63,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: clamp(30px, 5vh, 50px); /* Added bottom margin for extra separation */
+  margin-bottom: clamp(30px, 5vh, 50px);
+}
+
+/* Mobile text content adjustments */
+@media (max-width: 768px) {
+  .hero-content {
+    min-height: auto; /* Remove fixed height on mobile */
+    margin-bottom: clamp(20px, 3vh, 30px);
+    padding: 0 clamp(12px, 3vw, 20px);
+    max-width: 100%; /* Full width on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    margin-bottom: clamp(15px, 2vh, 25px);
+    padding: 0 clamp(8px, 2vw, 16px);
+  }
 }
 
 .hero-message {
@@ -75,19 +128,22 @@
   /* Remove fixed height to allow proper text flow */
 }
 
-/* Image layout optimized for viewport fit */
+/* Image layout optimized for mobile-first design */
 .hero-images-container {
   width: 100%;
-  max-width: 1200px; /* Reduced for better viewport fit */
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  height: clamp(250px, 30vh, 320px); /* Reduced height to fit viewport better */
+  height: clamp(250px, 30vh, 320px);
   pointer-events: none;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: clamp(40px, 6vh, 60px);
 }
+
+
 
 .images-half-circle {
   position: relative;
@@ -217,102 +273,153 @@
   }
 }
 
+/* Mobile hero section - optimized spacing and layout */
 @media (max-width: 768px) {
-  .hero { 
-    padding: clamp(200px, 26vh, 260px) clamp(16px, 4vw, 24px) clamp(20px, 3vh, 35px); /* Dramatically increased */
-    gap: clamp(30px, 4vh, 45px);
+  .hero {
+    height: auto !important;
+    min-height: auto !important; /* Let content determine height */
+    padding: 140px clamp(20px, 5vw, 28px) 20px !important; /* Increased top padding to clear nav+banner */
+    gap: clamp(18px, 2.8vh, 24px) !important; /* Tighter spacing */
+    justify-content: flex-start !important;
   }
   
   .hero-content {
-    min-height: clamp(140px, 18vh, 180px);
-    margin-bottom: clamp(18px, 2.5vh, 30px);
+    min-height: auto;
+    margin-bottom: clamp(14px, 2vh, 20px); /* Reduced */
+    padding: 0 clamp(16px, 4vw, 24px);
+    max-width: 100%;
   }
   
   .hero-message {
-    gap: clamp(1.8rem, 3.5vh, 2.2rem);
+    gap: clamp(0.9rem, 1.6vh, 1.2rem); /* Tighter text spacing */
   }
   
   .hero-title {
-    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-size: clamp(2rem, 7vw, 3.2rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
   }
   
   .hero-subtitle {
-    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    font-size: clamp(0.95rem, 3vw, 1.15rem) !important;
+    line-height: 1.6 !important;
+    max-width: 100% !important;
+    color: #666 !important;
   }
   
-  .hero-images-container { 
-    height: clamp(180px, 22vh, 220px);
-    margin-top: clamp(20px, 3vh, 35px);
+  /* Mobile: Horizontal scrolling gallery - enhanced */
+  .hero-images-container {
+    height: clamp(140px, 18vh, 180px) !important;
+    margin-top: clamp(12px, 1.8vh, 20px) !important; /* Reduced */
+    margin-bottom: 0 !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 0 !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
   }
   
-  /* Mobile: Compact grid layout */
-  .position-1 { bottom: 70%; left: 15%; transform: rotate(-8deg); }
-  .position-2 { bottom: 70%; right: 15%; transform: rotate(8deg); }
-  .position-3 { bottom: 40%; left: 8%; transform: rotate(-4deg); }
-  .position-4 { bottom: 40%; left: 50%; transform: translateX(-50%) rotate(0deg); }
-  .position-5 { bottom: 40%; right: 8%; transform: rotate(4deg); }
-  .position-6 { bottom: 10%; left: 50%; transform: translateX(-50%) rotate(0deg); }
-}
-
-@media (max-width: 640px) {
-  .hero {
-    padding: clamp(180px, 24vh, 240px) clamp(16px, 4vw, 24px) clamp(20px, 3vh, 35px); /* Dramatically increased */
+  .hero-images-container::-webkit-scrollbar {
+    display: none !important;
   }
   
-  .hero-content {
-    min-height: clamp(120px, 15vh, 160px);
-    margin-bottom: clamp(15px, 2vh, 25px);
+  .images-half-circle {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: clamp(14px, 3.5vw, 20px) !important;
+    width: max-content !important;
+    height: 100% !important;
+    padding: clamp(10px, 1.5vh, 14px) clamp(16px, 4vw, 24px) !important;
+    position: relative !important;
   }
   
-  .hero-images-container { 
-    height: clamp(160px, 20vh, 200px);
-    margin-top: clamp(18px, 2.5vh, 30px);
+  /* Mobile: Reset all positioned cards to horizontal layout */
+  .image-card {
+    position: relative !important;
+    transform: none !important;
+    width: clamp(160px, 40vw, 200px) !important;
+    height: clamp(110px, 26vw, 140px) !important;
+    border-radius: 16px !important;
+    flex-shrink: 0 !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 0 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  }
+  
+  .position-1,
+  .position-2,
+  .position-3,
+  .position-4,
+  .position-5,
+  .position-6 {
+    position: relative !important;
+    transform: none !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+  }
+  
+  .card-overlay {
+    padding: clamp(10px, 2.2vw, 14px) clamp(8px, 1.8vw, 12px) clamp(8px, 1.2vw, 10px) !important;
+    background: linear-gradient(transparent 0%, rgba(0,0,0,0.85) 50%) !important;
+  }
+  
+  .card-label {
+    font-size: clamp(0.75rem, 2.2vw, 0.9rem) !important;
+    font-weight: 600 !important;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding: clamp(160px, 22vh, 220px) clamp(12px, 3vw, 20px) clamp(15px, 2vh, 30px); /* Dramatically increased */
-    gap: clamp(25px, 3vh, 35px);
+    min-height: auto !important;
+    padding: 130px clamp(16px, 4vw, 20px) 18px !important; /* Increased to clear nav+banner */
+    gap: clamp(14px, 2.2vh, 20px) !important;
   }
   
   .hero-content {
-    min-height: clamp(110px, 14vh, 140px);
-    margin-bottom: clamp(12px, 1.5vh, 20px);
+    margin-bottom: clamp(12px, 1.8vh, 18px) !important;
   }
   
   .hero-message {
-    gap: clamp(1.5rem, 3vh, 2rem);
+    gap: clamp(0.8rem, 1.4vh, 1.1rem) !important;
   }
   
   .hero-title {
-    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-size: clamp(1.75rem, 6.5vw, 2.5rem) !important;
+    line-height: 1.2 !important;
   }
   
   .hero-subtitle {
-    font-size: clamp(0.8rem, 1.8vw, 1rem);
-  }
-  
-  .hero-images-container { 
-    height: clamp(140px, 18vh, 180px);
-    margin-top: clamp(15px, 2vh, 25px);
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 360px) {
-  .hero {
-    padding: clamp(140px, 20vh, 200px) clamp(8px, 2vw, 16px) clamp(12px, 1.5vh, 25px); /* Dramatically increased */
-    gap: clamp(20px, 2.5vh, 30px);
-  }
-  
-  .hero-content {
-    min-height: clamp(100px, 12vh, 120px);
-    margin-bottom: clamp(10px, 1vh, 18px);
+    font-size: clamp(0.85rem, 2.8vw, 1.05rem) !important;
+    line-height: 1.55 !important;
   }
   
   .hero-images-container {
-    height: clamp(120px, 15vh, 160px);
-    margin-top: clamp(12px, 1.5vh, 20px);
+    height: clamp(125px, 16vh, 160px) !important;
+    margin-top: clamp(10px, 1.5vh, 16px) !important;
+  }
+  
+  .images-half-circle {
+    gap: clamp(12px, 3vw, 18px) !important;
+    padding: clamp(8px, 1.2vh, 12px) clamp(14px, 3.5vw, 20px) !important;
+  }
+  
+  .image-card {
+    width: clamp(145px, 38vw, 180px) !important;
+    height: clamp(95px, 24vw, 125px) !important;
+    border-radius: 14px !important;
+  }
+  
+  .card-overlay {
+    padding: clamp(8px, 1.8vw, 12px) clamp(6px, 1.4vw, 10px) clamp(6px, 1vw, 8px) !important;
+  }
+  
+  .card-label {
+    font-size: clamp(0.7rem, 2vw, 0.85rem) !important;
   }
 }

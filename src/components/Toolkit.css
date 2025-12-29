@@ -421,7 +421,7 @@
   line-height: 1.5;
 }
 
-/* Responsive */
+/* Responsive - Mobile optimized */
 @media (max-width: 1200px) {
   .side-card.left {
     left: 2%;
@@ -458,19 +458,23 @@
     max-width: 100%;
   }
   
-  .why-section {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .community-content {
     flex-direction: column;
     text-align: center;
-    padding: 40px;
     gap: 30px;
   }
   
-  .why-quote {
-    font-size: 1.5rem;
+  .community-title {
+    font-size: 1.8rem;
   }
   
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .feature-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 }
 
@@ -509,16 +513,65 @@
     padding: 24px;
   }
   
-  .why-section {
-    padding: 30px;
+  /* Mobile community section redesign */
+  .toolkit-community {
+    padding: 40px 24px;
+    margin: 60px auto;
+  }
+  
+  .community-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .community-logo {
+    gap: 6px;
+  }
+  
+  .logo-icon {
+    font-size: 1.5rem;
   }
   
   .logo-text {
     font-size: 2rem;
   }
   
-  .why-quote {
-    font-size: 1.3rem;
+  .logo-subtitle {
+    font-size: 0.7rem;
+  }
+  
+  .community-greeting {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  
+  .community-title {
+    font-size: 1.5rem !important;
+    line-height: 1.4 !important;
+    max-width: 100% !important;
+  }
+  
+  .community-title br {
+    display: none; /* Remove line breaks on mobile */
+  }
+  
+  .community-features {
+    margin-top: 32px;
+  }
+  
+  .feature-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .feature-item h4 {
+    font-size: 1rem;
+  }
+  
+  .feature-item p {
+    font-size: 0.9rem;
   }
   
   .benefits-grid {
@@ -577,5 +630,58 @@
   
   .toolkit-card-description {
     font-size: 0.9rem;
+  }
+  
+  /* Enhanced mobile community section */
+  .toolkit-community {
+    padding: 32px 20px;
+    margin: 50px auto;
+    border-radius: 20px;
+  }
+  
+  .community-content {
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  
+  .logo-icon {
+    font-size: 1.3rem;
+  }
+  
+  .logo-text {
+    font-size: 1.8rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.65rem;
+  }
+  
+  .community-greeting {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+  
+  .community-title {
+    font-size: 1.3rem !important;
+    line-height: 1.45 !important;
+    padding: 0 10px;
+  }
+  
+  .community-features {
+    margin-top: 28px;
+  }
+  
+  .feature-row {
+    gap: 20px;
+  }
+  
+  .feature-item h4 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+  
+  .feature-item p {
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 }
