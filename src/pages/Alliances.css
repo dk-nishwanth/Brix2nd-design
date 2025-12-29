@@ -1,0 +1,473 @@
+/* Alliances Page Styles */
+.alliances-page {
+  min-height: 100vh;
+  background: var(--color-body);
+  color: var(--color-text-primary);
+}
+
+.alliances-main {
+  padding-top: 0;
+}
+
+/* Hero Section */
+.alliances-hero {
+  padding: 120px 40px 80px;
+  text-align: center;
+  background: var(--color-body);
+}
+
+.alliances-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.alliances-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  color: var(--color-text-primary);
+}
+
+.hero-accent {
+  color: var(--color-electric-purple);
+}
+
+.alliances-hero-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Key Partnerships */
+.key-partnerships {
+  padding: 80px 40px;
+  background: var(--color-body);
+}
+
+.partnerships-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.partnerships-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-text-primary);
+}
+
+.partnerships-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.partnership-card {
+  background: var(--color-card);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.partnership-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.partnership-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.partnership-logo {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.partnership-info {
+  flex: 1;
+}
+
+.partnership-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-light);
+}
+
+.partnership-type {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-electric-purple);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.partnership-year {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.partnership-description {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.partnership-benefits h4 {
+  color: var(--color-text-light);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.partnership-benefits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.partnership-benefits li {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.partnership-benefits li::before {
+  content: '•';
+  color: var(--color-electric-purple);
+  position: absolute;
+  left: 0;
+}
+
+.partnership-cta {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.partnership-btn {
+  background: transparent;
+  border: 1px solid var(--color-electric-purple);
+  color: var(--color-electric-purple);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.partnership-btn:hover {
+  background: var(--color-electric-purple);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ATP Highlight */
+.atp-highlight {
+  padding: 80px 40px;
+  background: rgba(0,0,0,0.02);
+}
+
+.atp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.atp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-electric-purple);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.atp-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.atp-subtitle {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--color-electric-purple);
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
+.atp-description {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.atp-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.atp-stat {
+  text-align: center;
+}
+
+.atp-stat .stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-electric-purple);
+}
+
+.atp-stat .stat-label {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.atp-image {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.atp-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Certification Bodies */
+.certification-bodies {
+  padding: 80px 40px;
+  background: var(--color-body);
+}
+
+.cert-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cert-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.cert-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.cert-card {
+  background: var(--color-card);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.cert-logo {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.cert-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.cert-description {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+/* Partnership Benefits */
+.partnership-benefits-section {
+  padding: 80px 40px;
+  background: rgba(0,0,0,0.02);
+}
+
+.benefits-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.benefits-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  margin-bottom: 3rem;
+  color: var(--color-text-primary);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  background: var(--color-card);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.benefit-card p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.alliances-cta {
+  padding: 80px 40px;
+  background: var(--color-body);
+  text-align: center;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.cta-description {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.cta-btn.primary {
+  background: var(--color-electric-purple);
+  color: white;
+}
+
+.cta-btn.primary:hover {
+  background: #5a52d5;
+  transform: translateY(-2px);
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: var(--color-electric-purple);
+  border: 1px solid var(--color-electric-purple);
+}
+
+.cta-btn.secondary:hover {
+  background: var(--color-electric-purple);
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .atp-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .atp-stats {
+    justify-content: center;
+  }
+  
+  .partnerships-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cert-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}

@@ -1,48 +1,111 @@
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear()
+export interface FooterLink {
+  label: string;
+  href: string;
+}
 
+export interface SocialLink {
+  platform: string;
+  href: string;
+  icon: string;
+}
+
+export interface FooterProps {
+  logo?: string;
+  description?: string;
+  navLinks?: FooterLink[];
+  socialLinks?: SocialLink[];
+}
+
+const defaultNavLinks: FooterLink[] = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Service Domains', href: '/services' },
+  { label: 'Our Partnerships', href: '#partnerships' },
+  { label: 'Certifications', href: '#certifications' },
+  { label: 'Careers', href: '#careers' },
+  { label: 'Contact Us', href: '/contact' },
+]
+
+const defaultSocialLinks: SocialLink[] = [
+  { platform: 'Twitter', href: 'https://twitter.com', icon: '𝕏' },
+  { platform: 'LinkedIn', href: 'https://linkedin.com', icon: '▣' },
+  { platform: 'Email', href: 'mailto:info@brixnet.in', icon: '✉' },
+]
+
+const Footer: React.FC<FooterProps> = ({
+  logo = 'BRiX',
+  description = 'A pure play Knowledge Transfer Organization established in November 2014. ATP feature from Extreme Networks for PAN India, enabling excellence at each level, process and service delivery.',
+  navLinks = defaultNavLinks,
+  socialLinks = defaultSocialLinks,
+}) => {
   return (
-    <footer className="footer dark-section">
-      <div className="container">
-        <div className="footer-content">
-          <div className="footer-brand">
-            <h3 className="footer-logo">BRIXNET</h3>
-            <p className="footer-tagline">
-              BRiX Network Pvt Ltd - A pure play Knowledge transfer Organization. Enabling excellence at each level, process and service delivery. Our core values guide everything we do - Premium Knowledge Transfer, innovation and professional service delivery that drives eminence.
-            </p>
-          </div>
+    <footer className="footer" data-testid="footer">
+      <div className="footer-inner">
+        {/* Large Brand Logo */}
+        <div className="footer-brand-large" data-testid="footer-logo">
+          <span className="footer-logo-text">{logo}</span>
+        </div>
 
+        <div className="footer-top">
+          <div className="footer-brand">
+            <Link to="/" className="footer-logo-small">
+              <span className="footer-star">✦</span> {logo}
+            </Link>
+            <p>{description}</p>
+          </div>
+          
           <div className="footer-links">
-            <div className="footer-column">
-              <h4>Navigate</h4>
-              <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/alliance">Alliance</a></li>
-                <li><a href="/career">Career</a></li>
-                <li><a href="/contact">Contact</a></li>
+            <div className="footer-col">
+              <h4>Menu</h4>
+              <ul data-testid="footer-nav-links">
+                {navLinks.map((link) => (
+                  <li key={link.label}>
+                    {link.href.startsWith('/') && !link.href.startsWith('/#') ? (
+                      <Link to={link.href}>{link.label}</Link>
+                    ) : (
+                      <a href={link.href}>{link.label}</a>
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
-
-            <div className="footer-column">
-              <h4>Connect</h4>
+            
+            <div className="footer-col">
+              <h4>Partnerships</h4>
               <ul>
-                <li><a href="mailto:info@brixnet.in">info@brixnet.in</a></li>
-                <li><a href="tel:+918041310000">+91 80 4131 0000</a></li>
+                <li><a href="#">Extreme Networks ATP</a></li>
+                <li><a href="#">SoSE Partnership</a></li>
+                <li><a href="#">Savant Networks Academy</a></li>
               </ul>
+            </div>
+            
+            <div className="footer-col">
+              <h4>Connect</h4>
+              <div className="footer-social" data-testid="footer-social-links">
+                {socialLinks.map((social) => (
+                  <a 
+                    key={social.platform}
+                    href={social.href}
+                    className="social-link"
+                    aria-label={social.platform}
+                    title={social.platform}
+                  >
+                    <span className="social-icon">{social.icon}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-
+        
         <div className="footer-bottom">
-          <p>&copy; {currentYear} BRIXNET. ALL RIGHTS RESERVED.</p>
-          <div className="footer-social">
-            <a href="#">INSTAGRAM</a>
-            <a href="#">LINKEDIN</a>
-            <a href="#">TWITTER</a>
+          <p>© {new Date().getFullYear()} BRiX Network Pvt Ltd. All rights reserved.</p>
+          <div className="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
           </div>
         </div>
       </div>

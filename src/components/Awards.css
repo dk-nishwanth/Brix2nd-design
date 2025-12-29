@@ -1,0 +1,225 @@
+/* Awards Component Styles */
+.awards {
+  padding: 80px 40px;
+  background: rgba(0,0,0,0.02);
+}
+
+.awards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.awards-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.awards-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+}
+
+.awards-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.awards-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.award-card {
+  background: var(--color-card-light);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.award-card:hover {
+  border-color: var(--color-electric-purple);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.award-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-electric-purple), #5a52d5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.award-card:hover::before {
+  opacity: 1;
+}
+
+.award-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.award-content {
+  text-align: center;
+}
+
+.award-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.award-organization {
+  color: var(--color-electric-purple);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.award-year {
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--color-electric-purple);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.award-description {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.certifications-section {
+  margin-bottom: 4rem;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.certification-card {
+  background: var(--color-card-light);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.certification-card:hover {
+  border-color: var(--color-electric-purple);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.cert-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--color-electric-purple);
+}
+
+.cert-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.cert-description {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.achievement-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.achievement-stat {
+  text-align: center;
+}
+
+.achievement-stat .stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-electric-purple);
+  margin-bottom: 0.5rem;
+}
+
+.achievement-stat .stat-label {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .certifications-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .achievement-stats {
+    gap: 2rem;
+  }
+  
+  .achievement-stat .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .achievement-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

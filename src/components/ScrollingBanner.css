@@ -1,0 +1,128 @@
+.scrolling-banner {
+  width: 100%;
+  max-width: 680px; /* Match header max-width */
+  margin: 0 auto;
+  background: #a3e635; /* Bright green like OSMO */
+  overflow: hidden;
+  white-space: nowrap;
+  position: fixed;
+  top: 76px; /* Below the nav bar (14px + 48px height + 14px gap) */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999; /* Below header */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px; /* Rounded corners */
+}
+
+.banner-track {
+  display: flex;
+  align-items: center;
+  animation: scroll-banner 30s linear infinite;
+  gap: 0;
+}
+
+@keyframes scroll-banner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.banner-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 40px;
+  flex-shrink: 0;
+}
+
+.banner-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.banner-star {
+  font-size: 16px;
+  color: #1a1a1a;
+}
+
+/* Pause animation on hover */
+.scrolling-banner:hover .banner-track {
+  animation-play-state: paused;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scrolling-banner {
+    height: 34px; /* Slightly larger */
+    max-width: calc(100% - 20px);
+    top: 70px; /* Adjusted for new header spacing */
+    left: 10px;
+    right: 10px;
+    transform: none;
+    border-radius: 16px;
+  }
+  
+  .banner-text {
+    font-size: 12px; /* Larger text */
+  }
+  
+  .banner-star {
+    font-size: 14px;
+  }
+  
+  .banner-item {
+    padding: 0 28px; /* More padding */
+    gap: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .scrolling-banner {
+    height: 32px;
+    top: 62px; /* Adjusted for header */
+    left: 8px;
+    right: 8px;
+    border-radius: 14px;
+  }
+  
+  .banner-text {
+    font-size: 11px;
+  }
+  
+  .banner-star {
+    font-size: 13px;
+  }
+  
+  .banner-item {
+    padding: 0 24px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  .scrolling-banner {
+    height: 30px;
+    border-radius: 12px;
+  }
+  
+  .banner-text {
+    font-size: 10px;
+  }
+  
+  .banner-star {
+    font-size: 12px;
+  }
+  
+  .banner-item {
+    padding: 0 20px;
+    gap: 10px;
+  }
+}

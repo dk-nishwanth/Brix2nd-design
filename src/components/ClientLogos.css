@@ -1,0 +1,129 @@
+/* Client Logos Component Styles */
+.client-logos {
+  padding: 80px 40px;
+  background: var(--color-body);
+}
+
+.client-logos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.client-logos-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.client-logos-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+}
+
+.client-logos-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.client-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.client-logo-card {
+  background: var(--color-card-light);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.client-logo-card:hover {
+  border-color: var(--color-electric-purple);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.client-logo {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.client-info {
+  text-align: center;
+}
+
+.client-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.client-industry {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.client-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.client-stat {
+  text-align: center;
+}
+
+.client-stat .stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-electric-purple);
+  margin-bottom: 0.5rem;
+}
+
+.client-stat .stat-label {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .client-logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .client-stats {
+    gap: 2rem;
+  }
+  
+  .client-stat .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .client-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .client-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

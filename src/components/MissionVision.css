@@ -1,0 +1,294 @@
+.mission-vision {
+  padding: 120px 24px 100px;
+  background: linear-gradient(180deg, #f8f8f8 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Intro Section */
+.mv-intro {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.mv-intro-text {
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.mv-intro-text .highlight {
+  color: #7047eb;
+  font-weight: 600;
+}
+
+/* Cards Container */
+.mv-cards {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+}
+
+/* Individual Card */
+.mv-card {
+  flex: 1;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.mv-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.mv-card-icon {
+  font-size: 2rem;
+}
+
+.mv-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.mv-card-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+/* Card Accent Lines */
+.mv-card-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.vision-accent {
+  background: linear-gradient(90deg, #7047eb 0%, #a78bfa 100%);
+}
+
+.mission-accent {
+  background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+}
+
+/* Center Divider */
+.mv-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 20px;
+}
+
+.divider-star {
+  font-size: 2rem;
+  color: #7047eb;
+}
+
+.divider-line {
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(180deg, #7047eb 0%, #10b981 100%);
+  border-radius: 2px;
+}
+
+.divider-year {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* Stats Section */
+.mv-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #1a1a1a;
+  border-radius: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .mission-vision {
+    padding: 100px 24px 80px;
+  }
+  
+  .mv-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .mv-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .mv-divider {
+    flex-direction: row;
+    padding: 10px 0;
+  }
+  
+  .divider-line {
+    width: 80px;
+    height: 2px;
+  }
+  
+  .mv-stats {
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .stat-divider {
+    display: none;
+  }
+  
+  .stat-item {
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-vision {
+    padding: 80px 20px 60px;
+  }
+  
+  .mv-intro {
+    margin-bottom: 50px;
+  }
+  
+  .mv-intro-text {
+    font-size: 1.3rem;
+  }
+  
+  .mv-card {
+    padding: 30px;
+    border-radius: 20px;
+  }
+  
+  .mv-card-title {
+    font-size: 1.3rem;
+  }
+  
+  .mv-card-text {
+    font-size: 1rem;
+  }
+  
+  .mv-cards {
+    margin-bottom: 50px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .mission-vision {
+    padding: 60px 16px 50px;
+  }
+  
+  .mv-intro-text {
+    font-size: 1.15rem;
+  }
+  
+  .mv-card {
+    padding: 24px;
+  }
+  
+  .mv-card-header {
+    gap: 10px;
+  }
+  
+  .mv-card-icon {
+    font-size: 1.5rem;
+  }
+  
+  .mv-card-title {
+    font-size: 1.2rem;
+  }
+  
+  .mv-stats {
+    padding: 24px 16px;
+    gap: 20px;
+    border-radius: 16px;
+  }
+  
+  .stat-item {
+    min-width: 80px;
+  }
+  
+  .stat-number {
+    font-size: 1.6rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+}

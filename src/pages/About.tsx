@@ -1,248 +1,142 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { useState } from 'react'
+import Header from '../components/Header'
+import ScrollingBanner from '../components/ScrollingBanner'
+import Footer from '../components/Footer'
+import { AnimatedSection } from '../components/ui/AnimatedSection'
 import './About.css'
 
 const About = () => {
-  const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.1 })
-  const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.1 })
-  const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.1 })
-  const [expandedService, setExpandedService] = useState<number | null>(null)
-
-  const values = [
-    {
-      title: 'Innovation',
-      description: 'Pushing boundaries and turning dreams into reality through cutting-edge solutions.',
-    },
-    {
-      title: 'Excellence',
-      description: 'Commitment to delivering trust and quality in every knowledge transfer initiative.',
-    },
-    {
-      title: 'Collaboration',
-      description: 'Fostering a culture of inclusiveness, accountability, and shared success.',
-    },
-    {
-      title: 'Transformation',
-      description: 'Empowering individuals and organizations to thrive in an ever-changing landscape.',
-    },
-  ]
-
-  const services = [
-    {
-      title: 'Advance Technology Domain',
-      description: 'Premium knowledge transfer on cloud, SDx, automation tools, and OEM certifications.',
-      subItems: [
-        'OEM Enablement & Certification Programs',
-        'CLOUD & SDx Technologies',
-        'Infrastructure Automation Tools',
-        'Vendor Neutral Programs',
-      ],
-    },
-    {
-      title: 'Learning & Development Domain',
-      description: 'Leadership, coaching, business skills, and cross-cultural development programs.',
-      subItems: [
-        'SOSE / Noetic Science',
-        'Business Skill',
-        'Leadership and Management',
-        'Behavioural Skill Program',
-        'Coaching',
-        'Cross-Culture',
-      ],
-    },
-    {
-      title: 'Domain Compliances & Governance',
-      description: 'ITIL, JIRA, CISA, CISM, CISSP, and certified IT management programs.',
-      subItems: [
-        'ITIL-SERIES',
-        'JIRA Project Management',
-        'CISA, CISM, CISSP',
-        'Certified Data Centre Professional',
-        'Certified IT Management',
-      ],
-    },
-    {
-      title: 'Professional Service Domain',
-      description: 'Infosec, VA/PT, security auditing, and knowledge management solutions.',
-      subItems: [
-        'Infosec & VA/PT Services',
-        'Mobile Security Scanning',
-        'Baseline Auditing',
-        'IT Infrastructure Auditing',
-        'Knowledge Management Services',
-      ],
-    },
-  ]
-
-  const toggleService = (index: number) => {
-    setExpandedService(expandedService === index ? null : index)
-  }
-
   return (
     <div className="about-page">
-      {/* Hero Section */}
-      <section className="about-hero">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
+      <Header />
+      <ScrollingBanner />
+      
+      <main className="about-main">
+        {/* Hero Section */}
+        <section className="about-hero">
+          <motion.div 
+            className="about-hero-content"
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="section-label">ABOUT US</span>
-            <h1 className="page-title">Delivering Trust Through Knowledge</h1>
-            <p className="hero-description">
-              A pure play Knowledge Transfer Organization committed to excellence, innovation, and
-              professional service delivery since November 2014.
+            <h1 className="about-hero-title">
+              About <span className="hero-accent">BRiX Network</span>
+            </h1>
+            <p className="about-hero-subtitle">
+              A pure play Knowledge Transfer Organization established in November 2014, 
+              setting benchmarks in the Knowledge Transfer Domain with ATP feature from Extreme Networks for PAN India.
             </p>
           </motion.div>
-        </div>
-      </section>
+        </section>
 
-      {/* Story Section */}
-      <section className="story-section" ref={ref1}>
-        <div className="container">
-          <div className="story-grid">
-            <motion.div
-              className="story-text"
-              initial={{ opacity: 0, x: -30 }}
-              animate={inView1 ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8 }}
-            >
-              <h2>Our DNA Culture</h2>
-              <p>
-                Innovation is ingrained in our DNA. We thrive on challenging the status quo and
-                empowering minds through transformative knowledge transfer.
-              </p>
-              <p>
-                At BRIX, we're not just purveyors of information—we're architects of transformation,
-                fostering excellence at each level of service delivery.
-              </p>
-            </motion.div>
-            <motion.div
-              className="story-image"
-              initial={{ opacity: 0, x: 30 }}
-              animate={inView1 ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="image-placeholder">
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
-                  alt="Team collaboration"
+        {/* Company Story */}
+        <AnimatedSection animation="slideUp" delay={0.1}>
+          <section className="company-story">
+            <div className="story-container">
+              <div className="story-content">
+                <h2 className="story-title">Our Story</h2>
+                <div className="story-text">
+                  <p>
+                    BRiX Network Pvt Ltd was established in November 2014 with a vision to enable excellence 
+                    at each level, process and service delivery. We are a pure play Knowledge Transfer Organization 
+                    that thrives in setting benchmarks in the Knowledge Transfer Domain.
+                  </p>
+                  <p>
+                    Our journey began with a commitment to premium knowledge transfer, innovation and professional 
+                    service delivery that drives eminence. Today, we stand as an Authorized Training Partner (ATP) 
+                    for Extreme Networks covering PAN India.
+                  </p>
+                  <p>
+                    At BRiX, we build a concrete bridge with a zeal to ensure value-based, high quality and 
+                    future-proof services. We have identified and partnered with world's leading organizations 
+                    as Authorised Training Partner & Learning Center.
+                  </p>
+                </div>
+              </div>
+              <div className="story-image">
+                <img 
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" 
+                  alt="BRiX Network Office"
                 />
               </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+            </div>
+          </section>
+        </AnimatedSection>
 
-      {/* Values Section */}
-      <section className="values-section" ref={ref2}>
-        <div className="container">
-          <motion.div
-            className="section-header"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView2 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-          >
-            <h2>Our Core Values</h2>
-            <p>The foundation upon which BRIX is built, brick by brick</p>
-          </motion.div>
-          <div className="values-grid">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                className="value-card"
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView2 ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-              >
-                <h3>{value.title}</h3>
-                <p>{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Company Info Section */}
-      <section className="company-section" ref={ref3}>
-        <div className="container">
-          <motion.div
-            className="company-header"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView3 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-          >
-            <h2>Brick by Brick</h2>
-            <p className="company-intro">
-              BRiX Network Pvt Ltd, established in November 2014, is a distinguished Knowledge Transfer
-              Organization and Authorized Training Partner of Extreme Networks across PAN India.
-            </p>
-          </motion.div>
-
-          <div className="company-grid">
-            <motion.div
-              className="company-details"
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView3 ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="detail-card">
-                <h3>Strategic Partnerships</h3>
-                <p>
-                  We've strategically allied with leading global organizations and OEMs, bolstered by
-                  Subject Matter Experts, Lead Auditors, and Cyber Security Specialists.
+        {/* Vision & Mission */}
+        <AnimatedSection animation="fadeIn" delay={0.1}>
+          <section className="vision-mission">
+            <div className="vm-container">
+              <div className="vm-card vision-card">
+                <div className="vm-icon">👁️</div>
+                <h3 className="vm-title">Our Vision</h3>
+                <p className="vm-text">
+                  To enable, excellence at each level, process and service delivery
                 </p>
               </div>
-              <div className="detail-card">
-                <h3>Academic Excellence</h3>
-                <p>
-                  Through our subsidiary, Savant Networks Academy, we partner with premier universities to
-                  establish Knowledge Transfer Centers, elevating student skillsets nationwide.
+              <div className="vm-divider">
+                <span className="vm-star">✦</span>
+                <span className="vm-year">Since 2014</span>
+              </div>
+              <div className="vm-card mission-card">
+                <div className="vm-icon">🎯</div>
+                <h3 className="vm-title">Our Mission</h3>
+                <p className="vm-text">
+                  Premium Knowledge Transfer, innovation and professional service delivery that drives eminence
                 </p>
               </div>
-            </motion.div>
+            </div>
+          </section>
+        </AnimatedSection>
 
-            <motion.div
-              className="services-box"
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView3 ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <h3>What We Do</h3>
-              <div className="services-accordion">
-                {services.map((service, index) => (
-                  <div key={index} className="accordion-item">
-                    <button
-                      className={`accordion-header ${expandedService === index ? 'active' : ''}`}
-                      onClick={() => toggleService(index)}
-                    >
-                      <div className="accordion-title">
-                        <span className="service-number">0{index + 1}</span>
-                        <h4>{service.title}</h4>
-                      </div>
-                      <span className="accordion-icon">{expandedService === index ? '−' : '+'}</span>
-                    </button>
-                    <div className={`accordion-content ${expandedService === index ? 'expanded' : ''}`}>
-                      <p className="service-desc">{service.description}</p>
-                      <ul className="sub-items">
-                        {service.subItems.map((item, idx) => (
-                          <li key={idx}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ))}
+        {/* Key Stats */}
+        <AnimatedSection animation="slideUp" delay={0.1}>
+          <section className="key-stats">
+            <h2 className="stats-title">Our Impact</h2>
+            <div className="stats-grid">
+              <div className="stat-card">
+                <span className="stat-number">10+</span>
+                <span className="stat-label">Years Experience</span>
               </div>
-              <a href="/services" className="cta-button-about">
-                View All Services
-              </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+              <div className="stat-card">
+                <span className="stat-number">500+</span>
+                <span className="stat-label">Professionals Trained</span>
+              </div>
+              <div className="stat-card">
+                <span className="stat-number">50+</span>
+                <span className="stat-label">Enterprise Clients</span>
+              </div>
+              <div className="stat-card">
+                <span className="stat-number">20+</span>
+                <span className="stat-label">Certifications</span>
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
+
+        {/* Leadership Team */}
+        <AnimatedSection animation="fadeIn" delay={0.1}>
+          <section className="leadership">
+            <h2 className="leadership-title">Leadership Team</h2>
+            <div className="leadership-grid">
+              <div className="leader-card">
+                <div className="leader-image">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="CEO" />
+                </div>
+                <h3 className="leader-name">Leadership Team</h3>
+                <p className="leader-role">Executive Leadership</p>
+                <p className="leader-bio">
+                  Our experienced leadership team brings decades of expertise in knowledge transfer, 
+                  technology training, and professional services.
+                </p>
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
+      </main>
+
+      <Footer />
     </div>
   )
 }
