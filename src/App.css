@@ -1,55 +1,22 @@
-/* BRIX Logo in top left corner of website */
+/* BRIX Logo sized larger to match nav bar */
 .website-logo-corner {
   position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 1001; /* Higher than header to be visible */
+  top: clamp(12px, 2vh, 20px);
+  left: clamp(12px, 2vw, 24px);
+  z-index: 1001;
+  transition: all 0.3s ease;
 }
 
 .website-logo-img {
-  height: 40px;
+  height: clamp(48px, 8vw, 64px); /* Increased size to match nav bar better */
   width: auto;
   display: block;
   object-fit: contain;
-}
-
-/* Responsive adjustments for website logo */
-@media (max-width: 768px) {
-  .website-logo-corner {
-    top: 10px;
-    left: 10px;
-    z-index: 999; /* Below header on mobile */
-  }
-  
-  .website-logo-img {
-    height: 34px; /* Slightly larger for better visibility */
-  }
-}
-
-@media (max-width: 600px) {
-  .website-logo-corner {
-    top: 8px;
-    left: 8px;
-  }
-  
-  .website-logo-img {
-    height: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .website-logo-corner {
-    top: 6px;
-    left: 6px;
-  }
-  
-  .website-logo-img {
-    height: 28px;
-  }
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
 }
 
 .app {
-  background: #f5f5f5;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
@@ -62,29 +29,47 @@ main {
   max-width: 100vw;
 }
 
-/* Ensure proper section spacing on mobile */
+/* Optimized section spacing */
 main > * {
   margin-bottom: 0;
 }
 
+/* Optimized section spacing for clean layout */
 main > section,
 main > div[class*="section"] {
-  margin-bottom: 20px;
+  margin-bottom: clamp(60px, 12vh, 100px); /* Increased section spacing */
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+  padding-left: 0; /* Removed default padding - let components handle their own */
+  padding-right: 0;
+  box-sizing: border-box;
 }
 
+/* Special spacing for hero section */
+main > section:first-child {
+  margin-bottom: clamp(80px, 15vh, 120px); /* Extra space after hero */
+}
+
+/* Responsive section spacing */
 @media (max-width: 768px) {
   main > section,
   main > div[class*="section"] {
-    margin-bottom: 15px;
+    margin-bottom: clamp(50px, 10vh, 80px);
+  }
+  
+  main > section:first-child {
+    margin-bottom: clamp(60px, 12vh, 90px);
   }
 }
 
 @media (max-width: 480px) {
   main > section,
   main > div[class*="section"] {
-    margin-bottom: 10px;
+    margin-bottom: clamp(40px, 8vh, 60px);
+  }
+  
+  main > section:first-child {
+    margin-bottom: clamp(50px, 10vh, 70px);
   }
 }

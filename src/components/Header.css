@@ -1,20 +1,20 @@
 .header {
   position: fixed;
-  top: 14px;
+  top: clamp(12px, 2vh, 20px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  width: calc(100% - 28px);
-  max-width: 680px;
+  width: calc(100% - clamp(24px, 4vw, 60px)); /* Dynamic width based on viewport */
+  max-width: 800px; /* Increased max-width */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .header.menu-open {
-  width: calc(100% - 40px); /* Maintain spacing from edges */
-  max-width: 1200px; /* Reasonable max width */
-  left: 50%; /* Keep centered */
-  transform: translateX(-50%); /* Keep centered */
-  top: 20px; /* Small top margin */
+  width: calc(100% - clamp(40px, 6vw, 80px)); /* Better spacing when open */
+  max-width: 1400px; /* Much wider when expanded */
+  left: 50%;
+  transform: translateX(-50%);
+  top: clamp(16px, 2.5vh, 24px);
 }
 
 .header-pill {
@@ -23,22 +23,22 @@
   justify-content: space-between;
   background: #1a1a1a;
   border-radius: 100px;
-  padding: 8px 24px;
+  padding: clamp(8px, 1.5vw, 12px) clamp(20px, 4vw, 32px); /* Dynamic padding */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1000;
-  min-height: 48px;
+  min-height: clamp(44px, 8vw, 56px); /* Responsive height */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .header.menu-open .header-pill {
-  border-radius: 16px; /* Rounded corners but not pill-shaped */
-  padding: 16px 32px; /* Increased padding */
+  border-radius: 20px; /* More rounded when expanded */
+  padding: clamp(16px, 3vw, 24px) clamp(28px, 5vw, 40px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: #1a1a1a;
-  min-height: 60px; /* Increased height */
+  min-height: clamp(56px, 10vw, 72px);
 }
 
 .menu-btn {

@@ -1,19 +1,20 @@
 .scrolling-banner {
-  width: 100%;
-  max-width: 680px; /* Match header max-width */
+  width: calc(100% - clamp(24px, 4vw, 60px));
+  max-width: 800px;
   margin: 0 auto;
-  background: #a3e635; /* Bright green like OSMO */
+  background: #a3e635;
   overflow: hidden;
   white-space: nowrap;
   position: fixed;
-  top: 76px; /* Below the nav bar (14px + 48px height + 14px gap) */
+  top: clamp(85px, 14vh, 110px); /* Adjusted for better spacing with new header */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 999; /* Below header */
-  height: 40px;
+  z-index: 999;
+  height: clamp(38px, 6vw, 50px); /* Slightly increased height */
   display: flex;
   align-items: center;
-  border-radius: 20px; /* Rounded corners */
+  border-radius: clamp(18px, 3vw, 25px);
+  box-shadow: 0 4px 20px rgba(163, 230, 53, 0.3); /* Added subtle glow */
 }
 
 .banner-track {
@@ -35,13 +36,13 @@
 .banner-item {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 0 40px;
+  gap: clamp(18px, 3.5vw, 28px); /* Increased gap */
+  padding: 0 clamp(28px, 5.5vw, 52px); /* Increased padding */
   flex-shrink: 0;
 }
 
 .banner-text {
-  font-size: 14px;
+  font-size: clamp(13px, 2.2vw, 17px); /* Slightly increased font size */
   font-weight: 700;
   color: #1a1a1a;
   letter-spacing: 0.1em;
@@ -49,8 +50,13 @@
 }
 
 .banner-star {
-  font-size: 16px;
+  font-size: clamp(15px, 2.8vw, 20px); /* Increased star size */
   color: #1a1a1a;
+}
+
+/* Pause animation on hover */
+.scrolling-banner:hover .banner-track {
+  animation-play-state: paused;
 }
 
 /* Pause animation on hover */

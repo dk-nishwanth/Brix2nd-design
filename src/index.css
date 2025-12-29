@@ -94,41 +94,98 @@ button, .menu-btn, .logo {
   user-select: none;
 }
 
-/* Section spacing for better mobile layout */
+/* Section spacing for optimal visual hierarchy */
 section {
-  margin-bottom: 40px;
+  margin-bottom: 60px; /* Increased spacing between sections */
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
   box-sizing: border-box;
 }
 
-/* Container classes for consistent mobile layout */
+/* Typography improvements for better readability */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+h4 { font-size: clamp(1.25rem, 3vw, 2rem); }
+
+p {
+  line-height: 1.7;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--color-text-secondary);
+}
+
+/* Improved button styling */
+button, .btn {
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  padding: clamp(12px, 2vw, 16px) clamp(20px, 4vw, 32px);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Container classes for optimal full-width layout */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px; /* Increased max-width for better space utilization */
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 clamp(16px, 4vw, 60px); /* Dynamic padding based on viewport */
+  box-sizing: border-box;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1600px; /* Even wider for hero sections */
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 80px);
+  box-sizing: border-box;
+}
+
+.container-full {
+  width: 100%;
+  padding: 0 clamp(12px, 3vw, 40px);
   box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   section {
-    margin-bottom: 30px;
+    margin-bottom: 40px; /* Increased spacing for better visual hierarchy */
   }
   
   .container {
-    padding: 0 16px;
+    padding: 0 clamp(12px, 4vw, 24px);
+  }
+  
+  .container-wide {
+    padding: 0 clamp(16px, 4vw, 32px);
   }
 }
 
 @media (max-width: 480px) {
   section {
-    margin-bottom: 25px;
+    margin-bottom: 32px;
   }
   
   .container {
-    padding: 0 12px;
+    padding: 0 clamp(8px, 3vw, 16px);
+  }
+  
+  .container-wide {
+    padding: 0 clamp(12px, 3vw, 20px);
   }
 }
 
@@ -210,11 +267,119 @@ section {
   color: var(--color-text-muted);
 }
 
-/* Glow Effects */
-.glow-neon-green {
-  box-shadow: 0 0 30px rgba(204, 255, 0, 0.3);
+/* Utility Classes for Better Layout Control */
+.section-padding {
+  padding: clamp(60px, 12vh, 120px) clamp(20px, 5vw, 80px);
 }
 
-.glow-electric-purple {
-  box-shadow: 0 0 30px rgba(157, 78, 221, 0.3);
+.section-padding-large {
+  padding: clamp(80px, 15vh, 140px) clamp(20px, 5vw, 80px);
+}
+
+.section-padding-small {
+  padding: clamp(40px, 8vh, 80px) clamp(20px, 5vw, 80px);
+}
+
+.max-width-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.max-width-wide {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.max-width-full {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Enhanced spacing utilities */
+.gap-small { gap: clamp(16px, 3vw, 32px); }
+.gap-medium { gap: clamp(24px, 4vw, 48px); }
+.gap-large { gap: clamp(32px, 5vw, 64px); }
+.gap-xl { gap: clamp(40px, 6vw, 80px); }
+
+/* Responsive text utilities */
+.text-display {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.text-heading {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.text-subheading {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.text-body-large {
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  line-height: 1.6;
+}
+
+.text-body {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.7;
+}
+
+/* Enhanced card utilities */
+.card-elevated {
+  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-elevated:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+}
+
+/* Improved button utilities */
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  padding: clamp(14px, 2.5vw, 18px) clamp(28px, 5vw, 36px);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #1a1a1a;
+  border: 2px solid rgba(26, 26, 26, 0.1);
+  padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 32px);
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: rgba(26, 26, 26, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
