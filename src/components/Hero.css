@@ -1,21 +1,21 @@
-/* Hero section optimized to fit viewport without extending */
+/* Hero section with maximum possible spacing from banner */
 .hero {
   width: 100%;
-  height: 100vh; /* Fixed height to prevent extension */
+  height: 100vh;
   height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Back to center for better viewport fit */
-  padding: clamp(120px, 15vh, 140px) clamp(20px, 5vw, 60px) clamp(40px, 6vh, 60px); /* Reduced padding */
+  justify-content: center;
+  padding: clamp(280px, 35vh, 350px) clamp(20px, 5vw, 60px) clamp(40px, 6vh, 60px); /* Dramatically increased top padding */
   position: relative;
   overflow: hidden;
   margin-bottom: 0;
   background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
-  gap: clamp(30px, 4vh, 50px); /* Controlled gap */
+  gap: clamp(50px, 8vh, 80px);
 }
 
-/* Text Content with proper text flow and no layout shifts */
+/* Text Content with additional bottom spacing */
 .hero-content {
   text-align: center;
   max-width: 1000px;
@@ -23,17 +23,18 @@
   z-index: 2;
   flex-shrink: 0;
   padding: 0 clamp(16px, 4vw, 32px);
-  min-height: clamp(200px, 25vh, 280px); /* Use min-height instead of fixed height */
+  min-height: clamp(200px, 25vh, 280px);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: clamp(30px, 5vh, 50px); /* Added bottom margin for extra separation */
 }
 
 .hero-message {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(1.5rem, 3vh, 2rem);
+  gap: clamp(2rem, 4vh, 2.5rem); /* Increased gap between title and subtitle */
   width: 100%;
   position: relative;
 }
@@ -183,37 +184,52 @@
   transform: rotate(20deg); 
 }
 
-/* Responsive Adjustments with proper text flow */
+/* Responsive adjustments with extreme spacing */
 @media (max-width: 1200px) {
   .hero {
-    padding: clamp(100px, 12vh, 120px) clamp(16px, 4vw, 40px) clamp(30px, 5vh, 50px);
-    gap: clamp(25px, 3vh, 40px);
+    padding: clamp(240px, 30vh, 300px) clamp(16px, 4vw, 40px) clamp(30px, 5vh, 50px); /* Dramatically increased */
+    gap: clamp(40px, 6vh, 60px);
   }
   
   .hero-content {
     min-height: clamp(180px, 22vh, 240px);
+    margin-bottom: clamp(25px, 4vh, 40px);
+  }
+  
+  .hero-images-container {
+    margin-top: clamp(30px, 5vh, 50px);
   }
 }
 
 @media (max-width: 992px) {
   .hero { 
-    padding: clamp(90px, 10vh, 110px) clamp(16px, 4vw, 32px) clamp(25px, 4vh, 40px);
-    gap: clamp(20px, 2.5vh, 35px);
+    padding: clamp(220px, 28vh, 280px) clamp(16px, 4vw, 32px) clamp(25px, 4vh, 40px); /* Dramatically increased */
+    gap: clamp(35px, 5vh, 50px);
   }
   
   .hero-content {
     min-height: clamp(160px, 20vh, 200px);
+    margin-bottom: clamp(20px, 3vh, 35px);
+  }
+  
+  .hero-images-container {
+    margin-top: clamp(25px, 4vh, 40px);
   }
 }
 
 @media (max-width: 768px) {
   .hero { 
-    padding: clamp(80px, 8vh, 100px) clamp(16px, 4vw, 24px) clamp(20px, 3vh, 35px);
-    gap: clamp(15px, 2vh, 30px);
+    padding: clamp(200px, 26vh, 260px) clamp(16px, 4vw, 24px) clamp(20px, 3vh, 35px); /* Dramatically increased */
+    gap: clamp(30px, 4vh, 45px);
   }
   
   .hero-content {
     min-height: clamp(140px, 18vh, 180px);
+    margin-bottom: clamp(18px, 2.5vh, 30px);
+  }
+  
+  .hero-message {
+    gap: clamp(1.8rem, 3.5vh, 2.2rem);
   }
   
   .hero-title {
@@ -226,6 +242,7 @@
   
   .hero-images-container { 
     height: clamp(180px, 22vh, 220px);
+    margin-top: clamp(20px, 3vh, 35px);
   }
   
   /* Mobile: Compact grid layout */
@@ -238,23 +255,34 @@
 }
 
 @media (max-width: 640px) {
+  .hero {
+    padding: clamp(180px, 24vh, 240px) clamp(16px, 4vw, 24px) clamp(20px, 3vh, 35px); /* Dramatically increased */
+  }
+  
   .hero-content {
     min-height: clamp(120px, 15vh, 160px);
+    margin-bottom: clamp(15px, 2vh, 25px);
   }
   
   .hero-images-container { 
     height: clamp(160px, 20vh, 200px);
+    margin-top: clamp(18px, 2.5vh, 30px);
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding: clamp(70px, 6vh, 90px) clamp(12px, 3vw, 20px) clamp(15px, 2vh, 30px);
-    gap: clamp(12px, 1.5vh, 25px);
+    padding: clamp(160px, 22vh, 220px) clamp(12px, 3vw, 20px) clamp(15px, 2vh, 30px); /* Dramatically increased */
+    gap: clamp(25px, 3vh, 35px);
   }
   
   .hero-content {
     min-height: clamp(110px, 14vh, 140px);
+    margin-bottom: clamp(12px, 1.5vh, 20px);
+  }
+  
+  .hero-message {
+    gap: clamp(1.5rem, 3vh, 2rem);
   }
   
   .hero-title {
@@ -267,21 +295,24 @@
   
   .hero-images-container { 
     height: clamp(140px, 18vh, 180px);
+    margin-top: clamp(15px, 2vh, 25px);
   }
 }
 
 /* Extra small devices */
 @media (max-width: 360px) {
   .hero {
-    padding: clamp(60px, 5vh, 80px) clamp(8px, 2vw, 16px) clamp(12px, 1.5vh, 25px);
-    gap: clamp(10px, 1vh, 20px);
+    padding: clamp(140px, 20vh, 200px) clamp(8px, 2vw, 16px) clamp(12px, 1.5vh, 25px); /* Dramatically increased */
+    gap: clamp(20px, 2.5vh, 30px);
   }
   
   .hero-content {
     min-height: clamp(100px, 12vh, 120px);
+    margin-bottom: clamp(10px, 1vh, 18px);
   }
   
   .hero-images-container {
     height: clamp(120px, 15vh, 160px);
+    margin-top: clamp(12px, 1.5vh, 20px);
   }
 }
