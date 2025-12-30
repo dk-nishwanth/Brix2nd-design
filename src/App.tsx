@@ -1,8 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
 import { Home, About, Services, Contact, Alliances, Careers, NotFound } from './pages'
+import LoadingScreen from './components/LoadingScreen'
 import './App.css'
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false)
+  }
+
+  if (isLoading) {
+    return <LoadingScreen onLoadingComplete={handleLoadingComplete} />
+  }
+
   return (
     <Router>
       {/* BRIX Logo in top left corner of website */}

@@ -11,9 +11,22 @@
 
 /* Hero Section */
 .alliances-hero {
-  padding: 120px 40px 80px;
+  padding: 140px 40px 80px !important;
   text-align: center;
   background: var(--color-body);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .alliances-hero {
+    padding: 140px 20px 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .alliances-hero {
+    padding: 130px 20px 60px !important;
+  }
 }
 
 .alliances-hero-content {

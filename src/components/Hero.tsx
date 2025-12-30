@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import './Hero.css'
 
 const cardData = [
@@ -60,6 +60,7 @@ const heroMessages = [
 
 const Hero = () => {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -69,72 +70,101 @@ const Hero = () => {
     return () => clearInterval(interval)
   }, [])
 
+  useEffect(() => {
+    // Force video to play on mount
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log('Video autoplay failed:', error)
+      })
+    }
+  }, [])
+
   const currentMessage = heroMessages[currentMessageIndex]
 
   return (
     <section className="hero">
-      {/* Hero Text Content */}
-      <div className="hero-content">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentMessage.id}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="hero-message"
-          >
-            <motion.h1 className="hero-title">
-              {currentMessage.title.split(' ').map((word, index) => {
-                const isAccent = ['knowledge', 'transfer', 'trust', 'creativity', 'efficiency'].some(acc => 
-                  word.toLowerCase().includes(acc)
-                )
-                
-                return (
-                  <span key={index}>
-                    {isAccent ? (
-                      <span className="hero-accent">{word}</span>
-                    ) : (
-                      word
-                    )}{' '}
-                  </span>
-                )
-              })}
-            </motion.h1>
-            
-            <motion.p 
-              className="hero-subtitle"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              {currentMessage.subtitle}
-            </motion.p>
-          </motion.div>
-        </AnimatePresence>
+      {/* Video Background */}
+      <div className="hero-video-background">
+        <video 
+          ref={videoRef}
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          preload="auto"
+          className="hero-video"
+          key="hero-video-new"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="hero-video-overlay"></div>
       </div>
 
-      {/* Static Half-Circle Image Layout (OSMO-style) */}
-      <div className="hero-images-container">
-        <div className="images-half-circle">
-          {cardData.map((card, index) => (
-            <motion.div 
-              key={card.id}
-              className={`image-card position-${index + 1}`}
-              initial={{ opacity: 0, y: 100, rotate: 0 }}
+      {/* Hero Content Container */}
+      <div className="hero-container">
+        {/* Main Content */}
+        <div className="hero-content">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentMessageIndex}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 1, 
-                delay: 0.6 + (index * 0.1),
-                ease: [0.16, 1, 0.3, 1]
-              }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="hero-text-wrapper"
             >
-              <div className="card-inner">
-                <img src={card.img} alt={card.label} />
-                <div className="card-overlay">
-                  <span className="card-label">{card.label}</span>
-                </div>
-              </div>
+              <motion.h1 className="hero-title">
+                {currentMessage.title.split(' ').map((word, index) => {
+                  const isAccent = ['knowledge', 'transfer', 'trust', 'creativity', 'efficiency'].some(acc => 
+                    word.toLowerCase().includes(acc)
+                  )
+                  
+                  return (
+                    <span key={index} className="title-word">
+                      {isAccent ? (
+                        <span className="hero-accent">{word}</span>
+                      ) : (
+                        word
+                      )}{' '}
+                    </span>
+                  )
+                })}
+              </motion.h1>
+              
+              <motion.p 
+                className="hero-subtitle"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+              >
+                {currentMessage.subtitle}
+              </motion.p>
+
+              <motion.div
+                className="hero-cta"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+              >
+                <button className="cta-primary">Explore Our Services</button>
+                <button className="cta-secondary">Learn More</button>
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Feature Cards */}
+        <div className="hero-features">
+          {cardData.slice(0, 3).map((card, index) => (
+            <motion.div
+              key={card.id}
+              className="feature-card"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 + (index * 0.1) }}
+            >
+              <div className="feature-number">{String(index + 1).padStart(2, '0')}</div>
+              <h3 className="feature-title">{card.label}</h3>
             </motion.div>
           ))}
         </div>

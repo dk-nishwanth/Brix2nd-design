@@ -15,8 +15,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 40px 80px;
+  padding: 140px 40px 80px !important;
   text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 140px 20px 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 130px 20px 60px !important;
+  }
 }
 
 .about-hero-content {
@@ -264,6 +277,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .about-hero {
+    padding: 140px 20px 60px;
+  }
+  
   .story-container {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -279,14 +296,16 @@
     gap: 20px;
   }
   
-  .about-hero {
-    padding: 100px 20px 60px;
-  }
-  
   .company-story,
   .vision-mission,
   .key-stats,
   .leadership {
     padding: 60px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 130px 20px 60px;
   }
 }
