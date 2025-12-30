@@ -1,5 +1,5 @@
 .platform {
-  padding: clamp(80px, 15vh, 140px) clamp(20px, 5vw, 80px) clamp(60px, 12vh, 120px);
+  padding: clamp(60px, 12vh, 100px) clamp(20px, 5vw, 80px) clamp(50px, 10vh, 80px);
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -112,7 +112,7 @@
 /* Responsive */
 @media (max-width: 1000px) {
   .platform {
-    padding: 100px 24px 80px;
+    padding: 80px 24px 60px;
   }
   
   .platform-badge {
@@ -149,6 +149,10 @@
 }
 
 @media (max-width: 768px) {
+  .platform {
+    padding: 60px 20px 50px;
+  }
+  
   .platform-header {
     margin-bottom: 40px;
   }
@@ -189,7 +193,7 @@
 
 @media (max-width: 500px) {
   .platform {
-    padding: 80px 16px 60px;
+    padding: 50px 16px 40px;
   }
   
   .platform-heading {

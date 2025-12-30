@@ -1,7 +1,7 @@
 .features {
   background: #1a1a1a;
   min-height: 100vh;
-  padding: 120px 40px;
+  padding: 80px 40px 60px;
   position: relative;
   overflow: hidden;
 }
@@ -256,7 +256,7 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .features {
-    padding: 100px 24px;
+    padding: 80px 24px 60px;
   }
   
   .brand-subtitle {
@@ -279,11 +279,15 @@
 
 @media (max-width: 768px) {
   .features {
-    padding: 80px 20px;
+    padding: 60px 20px 50px;
   }
   
   .features-title {
     font-size: 4rem;
+  }
+  
+  .features-title-container {
+    margin-bottom: 60px;
   }
   
   .brand-subtitle {
@@ -316,11 +320,15 @@
 
 @media (max-width: 500px) {
   .features {
-    padding: 60px 16px;
+    padding: 50px 16px 40px;
   }
   
   .features-title {
     font-size: 3rem;
+  }
+  
+  .features-title-container {
+    margin-bottom: 50px;
   }
   
   .showcase-content {

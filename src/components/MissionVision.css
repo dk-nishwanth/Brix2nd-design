@@ -79,7 +79,7 @@
 /* Responsive */
 @media (max-width: 992px) {
   .mission-vision {
-    padding: 100px 24px 80px;
+    padding: 80px 24px 60px;
   }
   
   .mv-cards {
@@ -121,11 +121,11 @@
 
 @media (max-width: 768px) {
   .mission-vision {
-    padding: 80px 20px 60px;
+    padding: 60px 20px 50px;
   }
   
   .mv-intro {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
   
   .mv-intro-text {
@@ -133,7 +133,7 @@
   }
   
   .mv-card {
-    padding: 30px;
+    padding: 28px;
     border-radius: 20px;
   }
   
@@ -146,7 +146,7 @@
   }
   
   .mv-cards {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
   
   .stat-number {
@@ -160,7 +160,11 @@
 
 @media (max-width: 500px) {
   .mission-vision {
-    padding: 60px 16px 50px;
+    padding: 50px 16px 40px;
+  }
+  
+  .mv-intro {
+    margin-bottom: 32px;
   }
   
   .mv-intro-text {
