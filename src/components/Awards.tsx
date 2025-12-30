@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Trophy, Star, Target, CheckCircle, FileText, Shield, BarChart3, Globe } from 'lucide-react'
 import './Awards.css'
 
 const awards = [
@@ -8,7 +9,7 @@ const awards = [
     organization: "Extreme Networks",
     year: "2018",
     description: "Official ATP certification for PAN India coverage",
-    icon: "🏆",
+    icon: Trophy,
     color: "#e91e63"
   },
   {
@@ -17,7 +18,7 @@ const awards = [
     organization: "Industry Recognition",
     year: "2020",
     description: "Outstanding performance in knowledge transfer programs",
-    icon: "⭐",
+    icon: Star,
     color: "#4caf50"
   },
   {
@@ -26,7 +27,7 @@ const awards = [
     organization: "Technology Alliance",
     year: "2021",
     description: "Recognized for innovative training methodologies",
-    icon: "🎯",
+    icon: Target,
     color: "#2196f3"
   },
   {
@@ -35,16 +36,16 @@ const awards = [
     organization: "ISO Standards",
     year: "2019",
     description: "ISO certified training and service delivery processes",
-    icon: "✅",
+    icon: CheckCircle,
     color: "#ff9800"
   }
 ]
 
 const certifications = [
-  { name: "ISO 9001:2015", description: "Quality Management System", icon: "📋" },
-  { name: "ISO 27001", description: "Information Security Management", icon: "🔒" },
-  { name: "CMMI Level 3", description: "Process Maturity Certification", icon: "📊" },
-  { name: "ATP Certified", description: "Extreme Networks Authorization", icon: "🌐" }
+  { name: "ISO 9001:2015", description: "Quality Management System", icon: FileText },
+  { name: "ISO 27001", description: "Information Security Management", icon: Shield },
+  { name: "CMMI Level 3", description: "Process Maturity Certification", icon: BarChart3 },
+  { name: "ATP Certified", description: "Extreme Networks Authorization", icon: Globe }
 ]
 
 const Awards = () => {
@@ -79,7 +80,7 @@ const Awards = () => {
                 whileHover={{ y: -10 }}
               >
                 <div className="award-icon" style={{ color: award.color }}>
-                  {award.icon}
+                  <award.icon className="award-icon-svg" strokeWidth={1.5} />
                 </div>
                 <div className="award-content">
                   <h4 className="award-title">{award.title}</h4>
@@ -112,7 +113,9 @@ const Awards = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="cert-icon">{cert.icon}</span>
+                <span className="cert-icon">
+                  <cert.icon className="cert-icon-svg" strokeWidth={1.5} />
+                </span>
                 <h4 className="cert-name">{cert.name}</h4>
                 <p className="cert-description">{cert.description}</p>
               </motion.div>

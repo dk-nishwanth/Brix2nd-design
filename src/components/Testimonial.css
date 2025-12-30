@@ -110,11 +110,21 @@
   gap: 16px;
 }
 
-.feature-title {
+.feature-item .feature-title {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #6366f1 !important;
   margin: 0;
+  text-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.testimonials-features .feature-item .feature-title {
+  color: #6366f1 !important;
+  text-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
 }
 
 .feature-description {

@@ -29,9 +29,16 @@
 }
 
 .biglogo-track span.dim {
-  color: #d4d4d4;
+  background: linear-gradient(180deg, #c0c0c0 0%, #808080 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.9;
 }
 
 .biglogo-track span.dim:hover {
-  color: #a5a5a5;
+  background: linear-gradient(180deg, #d0d0d0 0%, #909090 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

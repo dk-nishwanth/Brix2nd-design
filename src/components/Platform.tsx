@@ -1,15 +1,6 @@
 import { motion } from 'framer-motion'
 import './Platform.css'
 
-const menuItems = [
-  { id: 1, count: 17, label: 'Advance Technology' },
-  { id: 2, count: 15, label: 'Learning & Development' },
-  { id: 3, count: 14, label: 'Compliance & Governance' },
-  { id: 4, count: 11, label: 'Professional Services' },
-  { id: 5, count: 10, label: 'ATP Certifications' },
-  { id: 6, count: 9, label: 'Partnership Programs' },
-]
-
 const Platform = () => {
   return (
     <section className="platform" data-testid="platform-section">
@@ -50,50 +41,25 @@ const Platform = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <div className="dashboard-window">
-          {/* Sidebar */}
-          <div className="dashboard-sidebar">
-            <div className="sidebar-header">
-              <span className="sidebar-logo">✦ BRiX</span>
-              <span className="sidebar-star">✦</span>
-            </div>
-            
-            <div className="sidebar-section">
-              <div className="sidebar-item active">
-                <span className="item-icon">📚</span>
-                <span className="item-label">The Hub</span>
-                <span className="item-arrow">›</span>
-              </div>
-            </div>
-
-            <div className="sidebar-menu">
-              {menuItems.map((item) => (
-                <div key={item.id} className="menu-item">
-                  <span className="menu-count">{item.count}</span>
-                  <span className="menu-label">{item.label}</span>
-                </div>
-              ))}
-            </div>
+        <div className="welcome-hub-fullscreen">
+          <div className="hub-decorations">
+            <div className="hub-dot hub-dot-1"></div>
+            <div className="hub-dot hub-dot-2"></div>
+            <div className="hub-dot hub-dot-3"></div>
+            <div className="hub-dot hub-dot-4"></div>
+            <div className="hub-dot hub-dot-5"></div>
+            <div className="hub-dot hub-dot-6"></div>
+            <div className="hub-dot hub-dot-7"></div>
+            <div className="hub-dot hub-dot-8"></div>
           </div>
-
-          {/* Main Content */}
-          <div className="dashboard-main">
-            <div className="main-header">
-              <span className="main-breadcrumb">The Hub</span>
-              <div className="main-actions">
-                <div className="search-box">
-                  <span className="search-icon">🔍</span>
-                  <span className="search-text">Search</span>
-                  <span className="search-shortcut">⌘K</span>
-                </div>
-                <span className="action-icon">🔖</span>
-              </div>
-            </div>
-
-            <div className="main-content">
-              <div className="welcome-section">
-                <span className="welcome-greeting">Hello there 👋</span>
-                <h3 className="welcome-title">Welcome to<br />the Hub</h3>
+          
+          <div className="hub-content">
+            <span className="hub-greeting">Hello there 👋</span>
+            <h1 className="hub-title">Welcome to<br />the Hub</h1>
+            <div className="hub-search">
+              <div className="hub-search-input">
+                <span className="hub-search-icon">🔍</span>
+                <span className="hub-search-text">Search 122 resources</span>
               </div>
             </div>
           </div>

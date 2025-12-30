@@ -87,9 +87,16 @@
 }
 
 .award-icon {
-  font-size: 3.5rem;
   flex-shrink: 0;
   transition: transform 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.award-icon-svg {
+  width: 56px;
+  height: 56px;
 }
 
 .award-card:hover .award-icon {
@@ -171,10 +178,17 @@
 }
 
 .cert-icon {
-  font-size: 2.5rem;
-  display: block;
-  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
   transition: transform 0.4s ease;
+  color: #a3e635;
+}
+
+.cert-icon-svg {
+  width: 40px;
+  height: 40px;
 }
 
 .certification-card:hover .cert-icon {
@@ -267,7 +281,9 @@
   }
   
   .award-icon {
-    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .certifications-section {
@@ -306,7 +322,9 @@
   }
   
   .award-icon {
-    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .award-title {
@@ -322,7 +340,10 @@
   }
   
   .cert-icon {
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
   }
   
   .achievement-stats {
@@ -337,5 +358,29 @@
   
   .achievement-stat .stat-label {
     font-size: 0.9rem;
+  }
+}
+/* Mobile responsive icon sizing */
+@media (max-width: 768px) {
+  .award-icon-svg {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .cert-icon-svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 500px) {
+  .award-icon-svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .cert-icon-svg {
+    width: 28px;
+    height: 28px;
   }
 }
