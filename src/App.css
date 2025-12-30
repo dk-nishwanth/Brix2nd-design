@@ -1,43 +1,72 @@
-/* BRIX Logo - properly sized to fit with nav bar */
+/* BRIX Logo - enhanced visibility without background box */
 .website-logo-corner {
   position: fixed;
-  top: clamp(12px, 2vh, 20px);
+  top: clamp(8px, 1.5vh, 14px);
   left: clamp(12px, 2vw, 24px);
   z-index: 1001;
   transition: all 0.3s ease;
 }
 
+.website-logo-corner:hover {
+  transform: scale(1.05);
+}
+
 .website-logo-img {
-  height: clamp(56px, 10vw, 72px);
+  height: clamp(70px, 12vw, 90px);
   width: auto;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+  filter: 
+    brightness(1.2) 
+    contrast(1.3) 
+    saturate(1.1)
+    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4))
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  transition: all 0.3s ease;
 }
 
-/* Mobile logo - adjusted for full-width nav */
+.website-logo-img:hover {
+  filter: 
+    brightness(1.3) 
+    contrast(1.4) 
+    saturate(1.2)
+    drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 25px rgba(255, 255, 255, 0.4));
+}
+
+/* Mobile logo - enhanced visibility without background */
 @media (max-width: 768px) {
   .website-logo-corner {
-    top: 10px !important;
+    top: 6px !important;
     left: 10px !important;
-    z-index: 999 !important; /* Same level as header */
-    pointer-events: none !important; /* Allow clicks through to nav */
+    z-index: 999 !important;
   }
   
   .website-logo-img {
-    height: 48px !important; /* Match nav bar height */
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15)) !important;
+    height: 56px !important;
+    filter: 
+      brightness(1.25) 
+      contrast(1.35) 
+      saturate(1.15)
+      drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 15px rgba(255, 255, 255, 0.4)) !important;
   }
 }
 
 @media (max-width: 480px) {
   .website-logo-corner {
-    top: 8px !important;
+    top: 4px !important;
     left: 8px !important;
   }
   
   .website-logo-img {
-    height: 46px !important; /* Match nav bar height */
+    height: 50px !important;
+    filter: 
+      brightness(1.3) 
+      contrast(1.4) 
+      saturate(1.2)
+      drop-shadow(0 2px 5px rgba(0, 0, 0, 0.6))
+      drop-shadow(0 0 12px rgba(255, 255, 255, 0.5)) !important;
   }
 }
 
