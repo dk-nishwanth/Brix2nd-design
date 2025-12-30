@@ -12,13 +12,13 @@
   margin-bottom: 0;
 }
 
-/* Hero Container - Improved Layout with Better Top Spacing */
+/* Hero Container - Maximum Top Spacing to Completely Clear Scrolling Banner */
 .hero-container {
   width: 100%;
   max-width: 1400px;
   height: 100%;
   margin: 0 auto;
-  padding: clamp(180px, 25vh, 220px) clamp(40px, 6vw, 80px) clamp(80px, 12vh, 120px);
+  padding: clamp(260px, 35vh, 300px) clamp(40px, 6vw, 80px) clamp(80px, 12vh, 120px);
   position: relative;
   z-index: 2;
   display: flex;
@@ -227,10 +227,10 @@
   letter-spacing: 0.1em;
 }
 
-/* Responsive Design - Improved with Better Top Spacing */
+/* Responsive Design - Maximum Top Spacing for All Breakpoints */
 @media (max-width: 968px) {
   .hero-container {
-    padding: clamp(160px, 22vh, 200px) clamp(30px, 5vw, 40px) clamp(60px, 10vh, 80px);
+    padding: clamp(240px, 32vh, 280px) clamp(30px, 5vw, 40px) clamp(60px, 10vh, 80px);
     gap: clamp(50px, 7vh, 70px);
   }
   
@@ -248,7 +248,7 @@
 
 @media (max-width: 768px) {
   .hero-container {
-    padding: clamp(150px, 20vh, 180px) clamp(24px, 5vw, 32px) clamp(50px, 8vh, 70px);
+    padding: clamp(220px, 30vh, 260px) clamp(24px, 5vw, 32px) clamp(50px, 8vh, 70px);
     gap: clamp(40px, 6vh, 60px);
   }
   
@@ -286,7 +286,7 @@
 
 @media (max-width: 480px) {
   .hero-container {
-    padding: clamp(140px, 18vh, 160px) clamp(20px, 4vw, 24px) clamp(40px, 6vh, 60px);
+    padding: clamp(200px, 28vh, 240px) clamp(20px, 4vw, 24px) clamp(40px, 6vh, 60px);
     gap: clamp(32px, 5vh, 48px);
   }
   

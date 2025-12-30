@@ -100,7 +100,7 @@ const Showcase = () => {
             </div>
 
             {/* Decorative Text */}
-            <span className="circle-deco-text">New stuff is</span>
+            <span className="circle-deco-text"></span>
           </div>
         </motion.div>
       </div>
