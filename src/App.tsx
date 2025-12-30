@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import { Home, About, Services, Contact, Alliances, Careers, NotFound } from './pages'
 import LoadingScreen from './components/LoadingScreen'
+import ScrollToTop from './components/ScrollToTop'
 import './App.css'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       {/* BRIX Logo in top left corner of website */}
       <div className="website-logo-corner">
         <img src="/brix-logo.png" alt="BRiX Network" className="website-logo-img" />
