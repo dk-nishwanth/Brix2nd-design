@@ -81,12 +81,14 @@
 }
 
 .client-logo {
-  font-size: 3rem;
-  display: block;
-  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
   transition: all 0.4s ease;
   position: relative;
   z-index: 1;
+  color: #7c3aed;
 }
 
 .client-info {
@@ -175,7 +177,10 @@
   }
   
   .client-logo {
-    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
   }
   
   .client-stats {
@@ -199,7 +204,10 @@
   }
   
   .client-logo {
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
   }
   
   .client-name {
@@ -222,5 +230,24 @@
   
   .client-stat .stat-label {
     font-size: 0.9rem;
+  }
+}
+/* Icon sizing for different screen sizes */
+.client-logo svg {
+  width: 48px;
+  height: 48px;
+}
+
+@media (max-width: 768px) {
+  .client-logo svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .client-logo svg {
+    width: 32px;
+    height: 32px;
   }
 }

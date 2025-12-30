@@ -114,21 +114,12 @@ const Hero = () => {
               className="hero-text-wrapper"
             >
               <motion.h1 className="hero-title">
-                {currentMessage.title.split(' ').map((word, index) => {
-                  const isAccent = ['knowledge', 'transfer', 'trust', 'creativity', 'efficiency'].some(acc => 
-                    word.toLowerCase().includes(acc)
+                <span dangerouslySetInnerHTML={{
+                  __html: currentMessage.title.replace(
+                    /(knowledge|transfer|trust|creativity|efficiency)/gi,
+                    '<span class="hero-accent">$1</span>'
                   )
-                  
-                  return (
-                    <span key={index} className="title-word">
-                      {isAccent ? (
-                        <span className="hero-accent">{word}</span>
-                      ) : (
-                        word
-                      )}{' '}
-                    </span>
-                  )
-                })}
+                }} />
               </motion.h1>
               
               <motion.p 

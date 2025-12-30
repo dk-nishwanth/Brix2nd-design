@@ -1,17 +1,29 @@
 import { motion } from 'framer-motion'
+import { 
+  Building2, 
+  Monitor, 
+  Cloud, 
+  Shield, 
+  Rocket, 
+  Globe, 
+  Building, 
+  Heart, 
+  GraduationCap, 
+  Factory 
+} from 'lucide-react'
 import './ClientLogos.css'
 
 const clients = [
-  { name: "TechCorp Solutions", logo: "🏢", industry: "Technology" },
-  { name: "DataSystems Inc", logo: "💻", industry: "IT Services" },
-  { name: "CloudTech Enterprises", logo: "☁️", industry: "Cloud Computing" },
-  { name: "SecureNet Ltd", logo: "🔒", industry: "Cybersecurity" },
-  { name: "InnovateLabs", logo: "🚀", industry: "Innovation" },
-  { name: "GlobalIT Services", logo: "🌐", industry: "Global IT" },
-  { name: "FinanceSecure", logo: "🏦", industry: "Financial Services" },
-  { name: "HealthTech Systems", logo: "🏥", industry: "Healthcare" },
-  { name: "EduTech Solutions", logo: "🎓", industry: "Education" },
-  { name: "ManufacturingPro", logo: "🏭", industry: "Manufacturing" }
+  { name: "TechCorp Solutions", logo: Building2, industry: "Technology" },
+  { name: "DataSystems Inc", logo: Monitor, industry: "IT Services" },
+  { name: "CloudTech Enterprises", logo: Cloud, industry: "Cloud Computing" },
+  { name: "SecureNet Ltd", logo: Shield, industry: "Cybersecurity" },
+  { name: "InnovateLabs", logo: Rocket, industry: "Innovation" },
+  { name: "GlobalIT Services", logo: Globe, industry: "Global IT" },
+  { name: "FinanceSecure", logo: Building, industry: "Financial Services" },
+  { name: "HealthTech Systems", logo: Heart, industry: "Healthcare" },
+  { name: "EduTech Solutions", logo: GraduationCap, industry: "Education" },
+  { name: "ManufacturingPro", logo: Factory, industry: "Manufacturing" }
 ]
 
 const ClientLogos = () => {
@@ -43,7 +55,9 @@ const ClientLogos = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
             >
-              <span className="client-logo">{client.logo}</span>
+              <span className="client-logo">
+                <client.logo size={48} strokeWidth={1.5} />
+              </span>
               <div className="client-info">
                 <h3 className="client-name">{client.name}</h3>
                 <p className="client-industry">{client.industry}</p>

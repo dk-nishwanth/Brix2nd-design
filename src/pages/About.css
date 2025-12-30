@@ -169,7 +169,7 @@
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 500;
   margin-bottom: 3rem;
-  color: var(--color-text-primary);
+  color: #1a1a1a !important;
 }
 
 .stats-grid {
@@ -179,31 +179,35 @@
 }
 
 .stat-card {
-  background: var(--color-card-light);
+  background: #ffffff !important;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 20px;
   padding: 40px 20px;
   text-align: center;
   transition: transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .stat-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-color: #7c3aed;
 }
 
 .stat-number {
   display: block;
   font-size: 3rem;
   font-weight: 700;
-  color: var(--color-electric-purple);
+  color: #7c3aed !important;
   margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
 .stat-label {
   font-size: 1rem;
-  color: var(--color-text-secondary);
-  font-weight: 500;
+  color: #1a1a1a !important;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 /* Leadership */
